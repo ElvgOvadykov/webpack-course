@@ -36,7 +36,7 @@ export const App = () => {
       </button>
       <img src={avatarPng} alt="avatar" />
       <img src={catJpeg} alt="cat" width={100} height={100} />
-      <Calandar style={{ color: 'green' }} width={100} height={100} />
+      <Calandar color="green" style={{ color: 'green' }} width={100} height={100} />
       <h3>__PLATFORM__ = {__PLATFORM__}</h3>
       <Outlet />
     </div>

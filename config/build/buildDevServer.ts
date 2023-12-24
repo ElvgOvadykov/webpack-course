@@ -12,5 +12,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
      * Если раздавать статику через nginx
      * то надо делать проксирование на index.html */
     historyApiFallback: true,
+    hot: true,
   };
 }

@@ -14,6 +14,14 @@ function TODO() {
   console.log('TODOFUNCTION');
 }
 
+function TODO1() {
+  TODO2();
+}
+
+function TODO2() {
+  throw new Error();
+}
+
 export const App = () => {
   const [count, setCount] = React.useState(0);
   const increment = () => setCount(value => value + 1);
@@ -28,11 +36,20 @@ export const App = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', alignItems: 'start' }}>
-      <Link to={'/about'}>about</Link>
-      <Link to={'/shop'}>shop</Link>
-      <span className={classes.value}>{count}</span>
+      <Link data-testid="about" to={'/about'}>
+        about
+      </Link>
+      <Link data-testid="shop" to={'/shop'}>
+        shop
+      </Link>
+      <span data-testid="count" className={classes.value}>
+        {count}
+      </span>
       <button className={classes.button} onClick={increment}>
         +
+      </button>
+      <button className={classes.button} onClick={() => TODO1()}>
+        Throw Error
       </button>
       <img src={avatarPng} alt="avatar" />
       <img src={catJpeg} alt="cat" width={100} height={100} />
